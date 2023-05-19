@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+          Multiplication table
+        </title>
+    </head>
+    <body>
+        <script>
+            for (let i = 1; i <= 5; i++) {
+                document.write("Multiplication Table for ", i );
+                document.write("<br>")
+                document.write("----------------------");
+                document.write("<br>") // Empty line for separation
+
+
+                for (let j = 1; j <= 10; j++) {
+                    let result = i * j;
+                    document.write(i + " * " + j + " = " + result);
+                    document.write("<br>") // Empty line for separation
+                }
+
+
+                document.write("<br>"); // Empty line for separation
+            }        
+        </script>        
+    </body>
+</html>
