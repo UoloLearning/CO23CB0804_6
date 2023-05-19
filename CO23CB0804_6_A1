@@ -26,7 +26,7 @@
             } else if (pizza_size === "L") {
             pizza_price = large_size;
             } else {
-            console.log("Invalid option. Please try again.");
+            document.write("Invalid option. Please try again.");
             }
 
 
@@ -52,7 +52,7 @@
             } else if (topping_choice in toppings) {
                 pizza_toppings.push(topping_choice);
             } else {
-                console.log("Invalid option. Please try again.");
+                document.write("Invalid option. Please try again.");
             }
             }
 
@@ -80,7 +80,7 @@
                 delivery_cost = 0;
                 break;
             } else {
-                console.log("Invalid option. Please try again.");
+                document.write("Invalid option. Please try again.");
             }
             }
 
