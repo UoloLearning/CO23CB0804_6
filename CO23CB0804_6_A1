@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>
+          Pizza Ordering System
+        </title>
+    </head>
+    <body>
+        <script>
+         const small_size = 8.99;
+            const medium_size = 11.99;
+            const large_size = 14.99;
+
+
+            // Prompt user to select pizza size
+            const pizza_size = prompt("Enter the size of pizza would you like to have? (S/M/L)");
+
+
+            let pizza_price;
+
+
+            // Calculate the price of the selected pizza size
+            if (pizza_size === "S") {
+            pizza_price = small_size;
+            } else if (pizza_size === "M") {
+            pizza_price = medium_size;
+            } else if (pizza_size === "L") {
+            pizza_price = large_size;
+            } else {
+            console.log("Invalid option. Please try again.");
+            }
+
+
+            const toppings = {
+            cheese: 0.99,
+            pepperoni: 1.99,
+            mushrooms: 0.79,
+            onions: 0.59,
+            };
+
+
+            let pizza_toppings = [];
+
+
+            // Prompt user to select toppings
+            while (true) {
+            const topping_choice = prompt(
+                "Select a topping or enter 'done' to finish. [cheese, pepperoni, mushrooms, onions]"
+            );
+           
+            if (topping_choice === "done") {
+                break;
+            } else if (topping_choice in toppings) {
+                pizza_toppings.push(topping_choice);
+            } else {
+                console.log("Invalid option. Please try again.");
+            }
+            }
+
+
+            let topping_cost = 0;
+
+
+            // Calculate the total cost of toppings
+            for (const topping of pizza_toppings) {
+            topping_cost += toppings[topping];
+            }
+
+
+            let delivery_cost;
+
+
+            // Prompt user to select delivery or pickup
+            while (true) {
+            const delivery_option = prompt("Would you like delivery or pickup? (D/P)");
+           
+            if (delivery_option === "D") {
+                delivery_cost = 2.99;
+                break;
+            } else if (delivery_option === "P") {
+                delivery_cost = 0;
+                break;
+            } else {
+                console.log("Invalid option. Please try again.");
+            }
+            }
+
+
+            // Calculate the final cost
+            const final_cost = pizza_price + topping_cost + delivery_cost;
+
+
+            // Print order summary
+            document.write("Your order summary:<br>");
+            document.write(`Pizza size: ${pizza_size} <br>`);
+            document.write(`Toppings: ${pizza_toppings.join(", ")} <br>`);
+            document.write(`Total cost: $${final_cost.toFixed(2)} <br>`);
+
+
+        </script>
+    </body>
+</html>
